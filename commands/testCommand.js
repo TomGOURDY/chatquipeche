@@ -8,11 +8,16 @@ const Discord = require('discord.js');
 module.exports.run = async (client, message, arguments) => {
   const channel = message.channel;
 
-  await channel.send('Everything is working fine! :white_check_mark:');
+  const embed = new Discord.MessageEmbed();
+  embed
+    .setTitle(`Miaou`)
+    .setDescription('Prêt à jouer ! :smile_cat:')
+    .setImage('https://www.15heures.com/wp-content/uploads/2014/07/12animaux-sourire-3.jpg')
 
-  if (arguments.length > 0) {
-    await channel.send('The provided arguments were: ' + arguments.join(', '));
-  }
+  await message.delete();
+  await channel.send({
+    embeds : [embed]
+});
 };
 
 module.exports.name = 'test';

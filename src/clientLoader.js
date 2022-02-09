@@ -21,7 +21,7 @@ module.exports = {
 
     return client.login(process.env.TOKEN)
         .then(() => {
-          console.log(`The bot is online! Invite it with this link: https://discord.com/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`);
+          console.log(`Le bot est en ligne! Invitez le avec ce lien: https://discord.com/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`);
           return client;
         }).catch((error) => {
           throw error;
